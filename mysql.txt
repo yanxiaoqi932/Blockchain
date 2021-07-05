@@ -1,0 +1,60 @@
+数据库软件：MySQL
+用户名：root
+密码：123456
+schema名：cishan
+
+表1：user
+
+CREATE TABLE `user` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `user_ID` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+表2：projects
+
+CREATE TABLE `projects` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `user` int(255) NOT NULL,
+  `text` text NOT NULL,
+  `type` int(1) NOT NULL,
+  `object` varchar(255) DEFAULT NULL,
+  `num` int(255) NOT NULL,
+  `unit` varchar(50) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `time` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user` (`user`),
+  CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+表3：contribute
+
+ CREATE TABLE `contribute` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `user` int(255) NOT NULL,
+  `project` int(255) NOT NULL,
+  `num` int(255) NOT NULL,
+  `time` varchar(50) NOT NULL,
+  `user_name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `project` (`project`),
+  KEY `user` (`user`),
+  CONSTRAINT `contribute_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`id`),
+  CONSTRAINT `project` FOREIGN KEY (`project`) REFERENCES `projects` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+表4：donatorcount
+
+CREATE TABLE `donatorcount` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `contribute_count` int(255) NOT NULL,
+  `type` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+

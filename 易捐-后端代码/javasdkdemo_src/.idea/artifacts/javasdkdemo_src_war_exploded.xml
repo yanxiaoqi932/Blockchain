@@ -1,0 +1,33 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="javasdkdemo_src:war exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/javasdkdemo_src_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="javasdkdemo_src/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="javasdkdemo_src" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:2.6.0" />
+          <element id="library" level="project" name="junit-4.12" />
+          <element id="library" level="project" name="Maven: log4j:apache-log4j-extras:1.1" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.11" />
+          <element id="library" level="project" name="Maven: org.apiguardian:apiguardian-api:1.1.1" />
+          <element id="library" level="module" name="Maven: org.hyperledger.fabric-sdk-java:fabric-sdk-java:1.4.1" module-name="javasdkdemo_src" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.8.0-M1" />
+          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.8.0-M1" />
+          <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.2.0" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.16" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.16" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring4:Release" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:Release" />
+          <element id="library" level="project" name="Spring-5.2.3.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-5.2.3.RELEASE" />
+          <element id="file-copy" path="D:/druid-1.2.4.jar" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.60" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

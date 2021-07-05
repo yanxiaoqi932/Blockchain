@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:mysql.properties" />
+     <bean id="sqlConnect" class="com.alibaba.druid.pool.DruidDataSource">
+         <property name="driverClassName" value="${driver}"/>
+         <property name="url" value="${url}" />
+         <property name="username" value="${user}"/>
+         <property name="password" value="${password}" />
+     </bean>
+
+     <bean id="jdbc" class="org.springframework.jdbc.core.JdbcTemplate">
+         <property name="dataSource" ref="sqlConnect"/>
+     </bean>
+
+    <context:component-scan base-package="Dao"/>
+    <context:component-scan base-package="Service"/>
+    <context:component-scan base-package="Controller"/>
+</beans>
